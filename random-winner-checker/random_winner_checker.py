@@ -2,11 +2,6 @@ from datetime import *
 import os
 from random import randint
 
-if not os.path.exists('./random-winners-lists'):
-    os.mkdir('./random-winners-lists')
-else:
-    pass
-
 
 def choose_random(to_save_txt, *args):
     guess: int = randint(0, len(args) - 1)
@@ -16,6 +11,12 @@ def choose_random(to_save_txt, *args):
     print(f'{message}')
 
     if to_save_txt:
+
+        if not os.path.exists('./random-winners-lists'):
+            os.mkdir('./random-winners-lists')
+        else:
+            pass
+
         for index in os.listdir('./random-winners-lists'):
             if index.endswith('.txt'):
                 if index.startswith('result_random_winner_'):
