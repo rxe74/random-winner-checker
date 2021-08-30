@@ -13,7 +13,7 @@ from random import randint
 def choose_random(to_save_txt: bool, *args: list):
     """
         :param to_save_txt: bool --> specifies whether the result should be saved in a .txt file or not
-        :param args: ? --> participants list
+        :param args: list --> participants list
 
         main function to choose the random winner from the participants specified in the *args param
     """
