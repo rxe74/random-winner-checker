@@ -1,9 +1,22 @@
-from datetime import *
+"""
+    Python program to generate a random winner from the given participants list specified in the *args of the choose_random
+    function
+
+    Author : Rakshit
+"""
+
 import os
+from datetime import *
 from random import randint
 
 
-def choose_random(to_save_txt, *args):
+def choose_random(to_save_txt: bool, *args: list):
+    """
+        :param to_save_txt: bool --> specifies whether the result should be saved in a .txt file or not
+        :param args: ? --> participants list
+
+        main function to choose the random winner from the participants specified in the *args param
+    """
     guess: int = randint(0, len(args) - 1)
     file_suffix: int = 0
     message: str = f'{args[guess]} is the winner !'
